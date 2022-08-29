@@ -1,16 +1,27 @@
 ﻿// Напишите программу, которая принимает на вход трёхзначное число 
-//и на выходе показывает вторую цифру этого числа.
+//и на выходе показывает вторую цифру этого числ
 
-int num;
-int secondNumber() {
 
-int dec = (num % 100)/10;
-return dec;
+
+
+int secondNumber(int num) {
+
+int dec = 0;
+int ed = 0;
+
+
+ dec = num % 100;
+ ed = dec/10;
+ return ed;
 }
-// испольховала бесконечный цикл для удобства проверки выполнения условия с разными числами
-while (true) {
+
+int number;
 Console.WriteLine("Введите трехзначное число: ");
-num = Convert.ToInt32(Console.ReadLine());
-int dec = secondNumber();
-Console.WriteLine("Вторая цифра введенного числа: " + dec);
+number = Convert.ToInt32(Console.ReadLine());
+
+if(number>1000 || number < 99) {
+  Console.WriteLine("это не трехзначное число");
 }
+else {
+int d = secondNumber(number);
+Console.WriteLine("Вторая цифра введенного числа: " + d);}
